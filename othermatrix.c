@@ -7,6 +7,26 @@
 #define COL_C 3
 
 
+int main() {
+  int A[ROW_A][COL_A] = {{6, 4}, {8, 3}};
+  int B[ROW_B][COL_B] = {{1, 2, 3}, {4, 5, 6}};
+  int C[ROW_C][COL_C] = {{2, 4, 6}, {1, 3, 5}};
+
+  int C_transposed[COL_C][ROW_C] = {{0, 0}, {0, 0}, {0,0}};
+  int product[ROW_B][COL_A] = {{0, 0}, {0, 0}};
+  int D[ROW_A][COL_A];
+
+  scalar(ROW_B, COL_B, B, 3);
+  transpose(C, C_transposed);
+  multiply(B, C_transposed, product);
+  add(A, product, D);
+
+  print(ROW_A, COL_A, D);
+
+  return 0;
+}
+
+
 void transpose(int a[ROW_C][COL_C], int b[COL_C][ROW_C]) {
   for (int i = 0; i < ROW_C; i++)
     for (int j = 0; j < COL_C; j++)
@@ -46,24 +66,4 @@ void print(int rows, int cols, int mat[rows][cols]) {
       printf("%d ", mat[i][j]);
     printf("\n");
   }
-}
-
-
-int main() {
-  int A[ROW_A][COL_A] = {{6, 4}, {8, 3}};
-  int B[ROW_B][COL_B] = {{1, 2, 3}, {4, 5, 6}};
-  int C[ROW_C][COL_C] = {{2, 4, 6}, {1, 3, 5}};
-
-  int C_transposed[COL_C][ROW_C] = {{0, 0}, {0, 0}, {0,0}};
-  int product[ROW_B][COL_A] = {{0, 0}, {0, 0}};
-  int D[ROW_A][COL_A];
-
-  scalar(ROW_B, COL_B, B, 3);
-  transpose(C, C_transposed);
-  multiply(B, C_transposed, product);
-  add(A, product, D);
-
-  print(ROW_A, COL_A, D);
-
-  return 0;
 }
