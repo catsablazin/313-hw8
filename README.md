@@ -6,7 +6,13 @@ PURPOSE OF SOFTWARE:
 
 FILES: a short description of the purpose of each of the files, e.g. includes, source files, make file
 
-BUILD INSTRUCTIONS: 
+BUILD INSTRUCTIONS:
+cpp file
+- run g++ -o matrix matrix.cpp
+- run ./matrix
+
+c file
+- run
 
 TESTING METHODOLOGY: 
 
