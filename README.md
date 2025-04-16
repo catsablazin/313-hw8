@@ -12,8 +12,7 @@ cpp file
 - run ./matrix
 
 c file
-- run
+- run gcc -o othermatrix othermatrix.c
+- run ./othermatrix
 
-TESTING METHODOLOGY: 
-
-ADDITIONAL INFORMATION: relevant and not mentioned above
+TESTING METHODOLOGY: They both printed out the same thing when given the same 
